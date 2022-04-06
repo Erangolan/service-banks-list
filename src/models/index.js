@@ -1,5 +1,5 @@
-const Example = require('./Example')
+const Bank = require('./Bank')
 
 module.exports = {
-  Example,
+  Bank,
 }

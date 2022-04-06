@@ -7,8 +7,6 @@ const {
   DB_USER,
   DB_PASS,
   PORT,
-  API_KEY,
-  API_URL,
 } = process.env
 
 module.exports = {
@@ -16,7 +14,5 @@ module.exports = {
   DB_USER,
   DB_PASS,
   PORT,
-  API_KEY,
-  API_URL,
   SERVICE_NAME: `${packagejson.name}:${packagejson.version}`,
 }
