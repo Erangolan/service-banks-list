@@ -6,7 +6,7 @@ const {
   API_URL,
 } = require('../../consts')
 
-router.get('/', withSchema(schema), (async (req, res) => {
+router.get('/', (async (req, res) => {
   const {
     body: {
       locationName,

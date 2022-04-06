@@ -1,5 +1,6 @@
 require('./src/db')
 const express = require('express')
+const initDB = require('./src/funcs/initDB')
 
 const app = express()
 
@@ -14,6 +15,12 @@ app.use((req, res, next) => {
   }
   return next()
 })
+
+const bootstrap = async () => {
+  await initDB()
+}
+
+bootstrap()
 
 app.use('/api', require('./src/api'))
 
