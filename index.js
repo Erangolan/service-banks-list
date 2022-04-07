@@ -4,6 +4,10 @@ const initDB = require('./src/funcs/initDB')
 
 const app = express()
 
+const {
+  PORT,
+} = require('./src/consts')
+
 app.use(express.json())
 
 app.use((req, res, next) => {
@@ -24,4 +28,4 @@ bootstrap()
 
 app.use('/api', require('./src/api'))
 
-app.listen(3000, () => console.log('server listening on port 3000'))
+app.listen(PORT, () => console.log('server listening on port 3000'))
