@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "lint": "eslint --ext .js --ignore-path .gitignore .",
-    "start": "node server.js"
+    "start": "node index.js",
+    "heroku-postbuild": "cd app-banks-list && npm install && npm run build"
   },
   "jest": {
     "testEnvironment": "node",

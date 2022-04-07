@@ -1,16 +1,21 @@
 require('./src/db')
 const express = require('express')
+const path = require('path')
 const initDB = require('./src/funcs/initDB')
 
 const app = express()
 
-app.use(express.json())
+const {
+  PORT,
+} = require('./src/consts')
 
+app.use(express.json())
+app.use(express.static(path.resolve(__dirname, './app-banks-list/build')))
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
-  res.header('Access-Control-Allow-Headers', 'Origin, Content-Type')
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
   if (req.method === 'OPTIONS') {
-    res.header('Access-Control-Allow-Methods', 'POST')
+    res.header('Access-Control-Allow-Methods', 'POST', 'GET')
     return res.status(200).json({})
   }
   return next()
@@ -24,4 +29,4 @@ bootstrap()
 
 app.use('/api', require('./src/api'))
 
-app.listen(3000, () => console.log('server listening on port 3000'))
+app.listen(PORT, () => console.log('server listening on port 3000'))
