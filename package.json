@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon index.js",
     "lint": "eslint --ext .js --ignore-path .gitignore .",
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "jest": {
     "testEnvironment": "node",
