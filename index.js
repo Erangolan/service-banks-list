@@ -1,5 +1,6 @@
 require('./src/db')
 const express = require('express')
+const path = require('path')
 const initDB = require('./src/funcs/initDB')
 
 const app = express()
@@ -9,7 +10,7 @@ const {
 } = require('./src/consts')
 
 app.use(express.json())
-
+app.use(express.static(path.resolve(__dirname, './app-banks-list/build')))
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*')
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')

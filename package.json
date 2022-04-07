@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "nodemon index.js",
     "lint": "eslint --ext .js --ignore-path .gitignore .",
-    "start": "node index.js"
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "jest": {
     "testEnvironment": "node",
